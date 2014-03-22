@@ -27,7 +27,7 @@
 			credit:				"Georges Méliès",
 			caption:			"Le portrait mystérieux"
 		}
-	
+
 	};
 
 	TODO
@@ -36,15 +36,15 @@
 ================================================== */
 
 VCO.Slide = VCO.Class.extend({
-	
+
 	includes: [VCO.Events, VCO.DomMixins],
-	
+
 	_el: {},
-	
+
 	/*	Constructor
 	================================================== */
 	initialize: function(data, options, title_slide) {
-		
+
 		// DOM Elements
 		this._el = {
 			container: {},
@@ -53,17 +53,17 @@ VCO.Slide = VCO.Class.extend({
 			content_container: {},
 			content: {}
 		};
-	
+
 		// Components
 		this._media 		= null;
 		this._mediaclass	= {};
 		this._text			= {};
-	
+
 		// State
 		this._state = {
 			loaded: 		false
 		};
-		
+
 		this.has = {
 			headline: 	false,
 			text: 		false,
@@ -75,9 +75,9 @@ VCO.Slide = VCO.Class.extend({
 				color_value :"#FFF"
 			}
 		}
-		
+
 		this.has.title = title_slide;
-		
+
 		// Data
 		this.data = {
 			uniqueid: 				null,
@@ -87,7 +87,7 @@ VCO.Slide = VCO.Class.extend({
 			text: 					null,
 			media: 					null
 		};
-	
+
 		// Options
 		this.options = {
 			// animation
@@ -99,23 +99,23 @@ VCO.Slide = VCO.Class.extend({
 			skinny_size: 		650,
 			media_name: 		""
 		};
-		
+
 		// Actively Displaying
 		this.active = false;
-		
+
 		// Animation Object
 		this.animator = {};
-		
+
 		// Merge Data and Options
 		VCO.Util.mergeData(this.options, options);
 		VCO.Util.mergeData(this.data, data);
-		
+
 		this._initLayout();
 		this._initEvents();
-		
-		
+
+
 	},
-	
+
 	/*	Adding, Hiding, Showing etc
 	================================================== */
 	show: function() {
@@ -126,14 +126,14 @@ VCO.Slide = VCO.Class.extend({
 			easing: 	this.options.ease
 		});
 	},
-	
+
 	hide: function() {
-		
+
 	},
-	
+
 	setActive: function(is_active) {
 		this.active = is_active;
-		
+
 		if (this.active) {
 			if (this.data.background) {
 				this.fire("background_change", this.has.background);
@@ -143,50 +143,50 @@ VCO.Slide = VCO.Class.extend({
 			this.stopMedia();
 		}
 	},
-	
+
 	addTo: function(container) {
 		container.appendChild(this._el.container);
 		//this.onAdd();
 	},
-	
+
 	removeFrom: function(container) {
 		container.removeChild(this._el.container);
 	},
-	
+
 	updateDisplay: function(w, h, l) {
 		this._updateDisplay(w, h, l);
 	},
-	
+
 	loadMedia: function() {
-		
+
 		if (this._media && !this._state.loaded) {
 			this._media.loadMedia();
 			this._state.loaded = true;
 		}
 	},
-	
+
 	stopMedia: function() {
 		if (this._media && this._state.loaded) {
 			this._media.stopMedia();
 		}
 	},
-	
+
 	getBackground: function() {
 		return this.has.background;
 	},
-	
+
 	scrollToTop: function() {
 		this._el.container.scrollTop = 0;
 	},
-	
+
 	/*	Events
 	================================================== */
 
-	
+
 	/*	Private Methods
 	================================================== */
 	_initLayout: function () {
-		
+
 		// Create Layout
 		this._el.container 				= VCO.Dom.create("div", "vco-slide");
 		if (this.data.uniqueid) {
@@ -217,11 +217,11 @@ VCO.Slide = VCO.Class.extend({
 			if (this.data.background.text_background) {
 				this._el.container.className 				+= ' vco-text-background';
 			}
-			
-		} 
-		
-		
-		
+
+		}
+
+
+
 		// Determine Assets for layout and loading
 		if (this.data.media && this.data.media.url && this.data.media.url != "") {
 			this.has.media = true;
@@ -232,25 +232,25 @@ VCO.Slide = VCO.Class.extend({
 		if (this.data.text && this.data.text.headline) {
 			this.has.headline = true;
 		}
-		
+
 		// Create Media
 		if (this.has.media) {
-			
+
 			// Determine the media type
 			this.data.media.mediatype 	= VCO.MediaType(this.data.media);
 			this.options.media_name 	= this.data.media.mediatype.name;
 			this.options.media_type 	= this.data.media.mediatype.type;
-			
+
 			// Create a media object using the matched class name
 			this._media = new this.data.media.mediatype.cls(this.data.media, this.options);
-			
+
 		}
-		
+
 		// Create Text
 		if (this.has.text || this.has.headline) {
 			this._text = new VCO.Media.Text(this.data.text, {title:this.has.title});
 		}
-		
+
 		// Add to DOM
 		if (!this.has.text && !this.has.headline && this.has.media) {
 			this._el.container.className += ' vco-slide-media-only';
@@ -266,25 +266,25 @@ VCO.Slide = VCO.Class.extend({
 			this._el.container.className += ' vco-slide-text-only';
 			this._text.addTo(this._el.content);
 		}
-		
+
 		// Fire event that the slide is loaded
 		this.onLoaded();
-		
+
 	},
-	
+
 	_initEvents: function() {
-		
+
 	},
-	
+
 	// Update Display
 	_updateDisplay: function(width, height, layout) {
-		
+
 		if (width) {
 			this.options.width 					= width;
 		} else {
 			this.options.width 					= this._el.container.offsetWidth;
 		}
-		
+
 		if(VCO.Browser.mobile && (this.options.width <= this.options.skinny_size)) {
 			this._el.content.style.paddingLeft 	= 0 + "px";
 			this._el.content.style.paddingRight = 0 + "px";
@@ -293,7 +293,7 @@ VCO.Slide = VCO.Class.extend({
 			this._el.content.style.paddingLeft 	= 40 + "px";
 			this._el.content.style.paddingRight = 75 + "px";
 			this._el.content.style.width		= this.options.width - (75 + 40) + "px";
-		
+
 		} else if (this.options.width <= this.options.skinny_size) {
 			this._el.content.style.paddingLeft 	= this.options.slide_padding_lr + "px";
 			this._el.content.style.paddingRight = this.options.slide_padding_lr + "px";
@@ -303,16 +303,16 @@ VCO.Slide = VCO.Class.extend({
 			this._el.content.style.paddingRight = this.options.slide_padding_lr + "px";
 			this._el.content.style.width		= this.options.width - (this.options.slide_padding_lr * 2) + "px";
 		}
-		
-		
+
+
 		if (height) {
 			this.options.height = height;
 			//this._el.scroll_container.style.height		= this.options.height + "px";
-			
+
 		} else {
 			this.options.height = this._el.container.offsetHeight;
 		}
-		
+
 		if (this._media) {
 			if (!this.has.text && this.has.headline) {
 				this._media.updateDisplay(this.options.width, (this.options.height - this._text.headlineHeight()), layout);
@@ -320,7 +320,7 @@ VCO.Slide = VCO.Class.extend({
 				this._media.updateDisplay(this.options.width, this.options.height, layout);
 			}
 		}
-		
+
 	}
-	
+
 });

@@ -1,17 +1,17 @@
 !!! 5
 html(lang="en")
 	head
-		title StoryMapJS
+		title VideoSliderJS
 		meta(charset='utf-8')
-		meta(name='description', content='TimelineJS Embed')
+		meta(name='description', content='VideoSliderJS Embed')
 		meta(name='apple-mobile-web-app-capable', content='yes')
 		meta(name='apple-touch-fullscreen', content='yes')
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
 		// CSS
-		link(rel='stylesheet', href='css/storymap.css?v1')
+		link(rel='stylesheet', href='css/videoslider.css?v1')
 		//FONT
 		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Bevan%7CPontano+Sans&amp;subset=latin,latin')
-		
+
 		// Style
 		style
 			html, body {
@@ -34,15 +34,15 @@ html(lang="en")
 
 	body
 
-		div#storymap
+		div#videoslider
 
-		
+
 		// JavaScript
-		script(src='js/storymap.js')
+		script(src='js/videoslider.js')
 		script
-			var storymap = new VCO.StoryMap('storymap', 'examples/marktwain.json', {
+			var videoslider = new VCO.VideoSlider('videoslider', 'examples/videos.json', {
 				map_type:"mapbox:zachwise.hgmmh8ho"
 			});
 			window.onresize = function(event) {
-				storymap.updateDisplay();
+				videoslider.updateDisplay();
 			}

@@ -1,8 +1,8 @@
-/*  VCO.Media.Vine
+/*  VCO.Media.Video
 
 ================================================== */
 
-VCO.Media.Vine = VCO.Media.extend({
+VCO.Media.Video = VCO.Media.extend({
 
     includes: [VCO.Events],
 
@@ -16,16 +16,10 @@ VCO.Media.Vine = VCO.Media.extend({
         this.message.updateMessage(VCO.Language.messages.loading + " " + this.options.media_name);
 
         // Create Dom element
-        this._el.content_item   = VCO.Dom.create("div", "vco-media-item vco-media-iframe vco-media-vine vco-media-shadow", this._el.content);
-
-        // Get Media ID
-        this.media_id = this.data.url.split("vine.co/v/")[1];
-
-        // API URL
-        api_url = "https://vine.co/v/" + this.media_id + "/embed/simple";
+        this._el.content_item   = VCO.Dom.create("div", "vco-media-item vco-media-video", this._el.content);
 
         // API Call
-        this._el.content_item.innerHTML = "<video width='100%' height='100%' src='" + api_url + "'></iframe><script async src='http://platform.vine.co/static/scripts/embed.js' charset='utf-8'></script>"
+        this._el.content_item.innerHTML = "<video controls width='100%' height='100%' src='" + this.data.url + "'></video>"
 
         // After Loaded
         this.onLoaded();
