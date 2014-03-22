@@ -1,8 +1,8 @@
 /*!
 	StoryMap
-	
+
 	Designed and built by Zach Wise for the Northwestern University Knight Lab
-	
+
 	This Source Code Form is subject to the terms of the Mozilla Public
 	License, v. 2.0. If a copy of the MPL was not distributed with this
 	file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -39,13 +39,14 @@
 @import "media/types/VCO.Media.Image.less";
 @import "media/types/VCO.Media.Twitter.less";
 @import "media/types/VCO.Media.Blockquote.less";
+@import "media/types/VCO.Media.Video.less";
 @import "media/types/VCO.Media.Flickr.less";
 @import "media/types/VCO.Media.YouTube.less";
 @import "media/types/VCO.Media.IFrame.less";
 @import "media/types/VCO.Media.Wikipedia.less";
 
 
-/* StoryMap
+/* VideoSlider
 ================================================== */
 .vco-videoslider {
 	width:100%;
@@ -87,7 +88,7 @@
 		}
 		.vco-slider-container-mask {
 			overflow: visible;
-			
+
 			//.translucent-background(#FFF, 0.70);
 			//#gradient > .horizontal(@start-color: rgba(256,256,256,.0001); @end-color: rgba(256,256,256,0.85); @start-percent: 0%; @end-percent: 25%);
 			//#gradient > .horizontal-three-colors(@start-color: rgba(256,256,256,.0001); @mid-color: rgba(256,256,256,0.85); @color-stop: 10%; @end-color: rgba(256,256,256,.50));
@@ -100,7 +101,7 @@
 				//.box-shadow(1px 1px 7px rgba(0,0,0,.30));
 				padding:20px;
 				border: 1px solid darken(@color-background,30);
-				
+
 			}
 			.vco-slidenav-icon, .vco-slidenav-title, .vco-slidenav-description {
 				text-shadow: none;
@@ -109,7 +110,7 @@
 				display:none;
 			}
 		}
-	
+
 		.vco-slidenav-previous {
 			left:-100%;
 			margin-left:0px;
@@ -134,19 +135,3 @@
 		}
 	}
 }
-/* Default Fonts
-================================================== */
-/*
-.vco-storymap {
-	font-family:'Pontano Sans',sans-serif !important;
-}
-.vco-storymap {
-	h1, h2, h3, h4, h5, h6 {
-		font-family:'Bevan',serif !important;
-		font-weight: normal;
-	}
-}
-.vco-secondary-font {
-	
-}
-*/
