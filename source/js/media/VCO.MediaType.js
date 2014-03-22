@@ -1,73 +1,79 @@
 /*	VCO.MediaType
 	Determines the type of media the url string is.
 	returns an object with .type and .id
-	You can add new media types by adding a regex 
-	to match and the media class name to use to 
-	render the media 
+	You can add new media types by adding a regex
+	to match and the media class name to use to
+	render the media
 
 	TODO
 	Allow array so a slideshow can be a mediatype
 ================================================== */
 VCO.MediaType = function(m) {
-	var media = {}, 
+	var media = {},
 		media_types = 	[
 			{
+				type:       "video",
+				name:       "HTML5 Video",
+				match_str:  ".mp4",
+				cls:        VCO.Media.Video
+			},
+			{
 				type: 		"youtube",
-				name: 		"YouTube", 
+				name: 		"YouTube",
 				match_str: 	"(www.)?youtube|youtu\.be",
 				cls: 		VCO.Media.YouTube
 			},
 			{
 				type: 		"vimeo",
-				name: 		"Vimeo", 
+				name: 		"Vimeo",
 				match_str: 	"(player.)?vimeo\.com",
 				cls: 		VCO.Media.Vimeo
 			},
 			{
 				type: 		"dailymotion",
-				name: 		"DailyMotion", 
+				name: 		"DailyMotion",
 				match_str: 	"(www.)?dailymotion\.com",
 				cls: 		VCO.Media.DailyMotion
 			},
 			{
 				type: 		"vine",
-				name: 		"Vine", 
+				name: 		"Vine",
 				match_str: 	"(www.)?vine\.co",
 				cls: 		VCO.Media.Vine
 			},
 			{
 				type: 		"soundcloud",
-				name: 		"SoundCloud", 
+				name: 		"SoundCloud",
 				match_str: 	"(player.)?soundcloud\.com",
 				cls: 		VCO.Media.SoundCloud
 			},
 			{
 				type: 		"twitter",
-				name: 		"Twitter", 
+				name: 		"Twitter",
 				match_str: 	"(www.)?twitter\.com",
 				cls: 		VCO.Media.Twitter
 			},
 			{
 				type: 		"googlemaps",
-				name: 		"Google Map", 
+				name: 		"Google Map",
 				match_str: 	"maps.google",
 				cls: 		VCO.Media.Map
 			},
 			{
 				type: 		"googleplus",
-				name: 		"Google+", 
+				name: 		"Google+",
 				match_str: 	"plus.google",
 				cls: 		VCO.Media.GooglePlus
 			},
 			{
 				type: 		"flickr",
-				name: 		"Flickr", 
+				name: 		"Flickr",
 				match_str: 	"flickr.com/photos",
 				cls: 		VCO.Media.Flickr
 			},
 			{
 				type: 		"instagram",
-				name: 		"Instagram", 
+				name: 		"Instagram",
 				match_str: 	/(instagr.am|instagram.com)\/p/,
 				cls: 		VCO.Media.Instagram
 			},
@@ -120,7 +126,7 @@ VCO.MediaType = function(m) {
 				cls: 		VCO.Media
 			}
 		];
-	
+
 	for (var i = 0; i < media_types.length; i++) {
 		if (m instanceof Array) {
 			return media = {
@@ -134,7 +140,7 @@ VCO.MediaType = function(m) {
 			break;
 		}
 	};
-	
+
 	return false;
-	
+
 }
