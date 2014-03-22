@@ -4,14 +4,12 @@
         "slides": [
             {
                 "type":                     "overview",
-                "text": {
-                    "headline":             "VideoSliderJS",
-                    "text":                 "How might we make audio and video feel more \"webby\"? How might we design visual experiences that allow for variable time commitments?"
-                },
                 "media": {
                     "url":              "http://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Mark_Twain_Vanity_Fair_1908-05-13.jpeg/375px-Mark_Twain_Vanity_Fair_1908-05-13.jpeg",
-                    "credit":               "Vanity Fair",
-                    "caption":          "Twain caricatured by Spy for Vanity Fair, 1908"
+                    "headline":               "Vanity Fair",
+                    "text":          "Twain caricatured by Spy for Vanity Fair, 1908",
+                    "caption": "tktktktk",
+                    "credit": "tktktktk"
                 }
             },
             {
