@@ -288,7 +288,7 @@ VCO.VideoSlider = VCO.Class.extend({
 	_initLayout: function () {
 		var self = this;
 
-		this._el.container.className += ' vco-videoslider';
+		this._el.container.className += ' vco-videoslider vco-layout-portrait';
 		this.options.base_class = this._el.container.className;
 
 		// Create Layout
