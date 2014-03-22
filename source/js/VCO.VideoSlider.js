@@ -74,168 +74,8 @@
 	// @codekit-prepend "slider/VCO.SlideNav.js";
 	// @codekit-prepend "slider/VCO.StorySlider.js";
 
-// LEAFLET
-	
-	// LEAFLET SRC
-		// Leaflet Core
-			// @codekit-prepend "map/leaflet/leaflet-src/Leaflet.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/core/Util.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/core/Class.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/core/Events.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/core/Browser.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geometry/Point.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geometry/Bounds.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geometry/Transformation.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/DomUtil.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/LatLng.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/LatLngBounds.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/projection/Projection.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/projection/Projection.SphericalMercator.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/projection/Projection.LonLat.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/crs/CRS.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/crs/CRS.Simple.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/crs/CRS.EPSG3857.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/geo/crs/CRS.EPSG4326.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/map/Map.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/DomEvent.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/Draggable.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/core/Handler.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/control/Control.js";
 
-		// Additonal Projections EPSG:3395 projection (used by some map providers).
-			// "map/leaflet/leaflet-src/geo/projection/Projection.Mercator.js";
-			// "map/leaflet/leaflet-src/geo/crs/CRS.EPSG3395.js";
-
-		// TileLayerWMS WMS tile layer.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/tile/TileLayer.js";
-
-		// TileLayerCanvas Tile layer made from canvases (for custom drawing purposes)
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/tile/TileLayer.Canvas.js";
-
-		// ImageOverlay Used to display an image over a particular rectangular area of the map.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/ImageOverlay.js";
-
-		// Marker Markers to put on the map.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/marker/Icon.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/marker/Icon.Default.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/marker/Marker.js";
-
-		// DivIcon Lightweight div-based icon for markers.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/marker/DivIcon.js";
-
-		// Popup Used to display the map popup (used mostly for binding HTML data to markers and paths on click).
-			// "map/leaflet/leaflet-src/layer/Popup.js";
-			// "map/leaflet/leaflet-src/layer/marker/Marker.Popup.js";
-
-		// LayerGroup Allows grouping several layers to handle them as one.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/LayerGroup.js";
-
-		// FeatureGroup Extends LayerGroup with mouse events and bindPopup method shared between layers.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/FeatureGroup.js";
-
-		// Path Vector rendering core (SVG-powered), enables overlaying the map with SVG paths.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/Path.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/Path.SVG.js";
-			// "map/leaflet/leaflet-src/layer/vector/Path.Popup.js";
-
-		// PathVML VML fallback for vector rendering core (IE 6-8)
-			// "map/leaflet/leaflet-src/layer/vector/Path.VML.js";
-
-		// Path Canvas fallback for vector rendering core (makes it work on Android 2+)
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/canvas/Path.Canvas.js";
-
-		// Polyline Polyline overlays.
-			// @codekit-prepend "map/leaflet/leaflet-src/geometry/LineUtil.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/Polyline.js";
-
-		// Polygon Polygon overlays
-			// @codekit-prepend "map/leaflet/leaflet-src/geometry/PolyUtil.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/Polygon.js";
-
-		// MultiPoly MultiPolygon and MultyPolyline layers.
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/MultiPoly.js";
-
-		// Rectangle
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/Rectangle.js";
-
-		// Circle
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/Circle.js";
-
-		// CircleMarker
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/CircleMarker.js";
-
-		// VectorsCanvas Canvas fallback for vector layers (polygons, polylines, circles, circlemarkers)
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/vector/canvas/Polyline.Canvas.js";
-			// "map/leaflet/leaflet-src/layer/vector/canvas/Polygon.Canvas.js";
-			// "map/leaflet/leaflet-src/layer/vector/canvas/Circle.Canvas.js";
-			// "map/leaflet/leaflet-src/layer/vector/canvas/CircleMarker.Canvas.js";
-
-		// GeoJSON GeoJSON layer, parses the data and adds corresponding layers above.
-			// "map/leaflet/leaflet-src/layer/GeoJSON.js";
-
-		// MapDrag Makes the map draggable (by mouse or touch).
-			// @codekit-prepend "map/leaflet/leaflet-src/map/handler/Map.Drag.js";
-
-		// MouseZoom Scroll wheel zoom and double click zoom on the map.
-			// @codekit-prepend "map/leaflet/leaflet-src/map/handler/Map.DoubleClickZoom.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/map/handler/Map.ScrollWheelZoom.js";
-
-		// TouchZoom Enables smooth touch zoom / tap / longhold / doubletap on iOS, IE10, Android
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/DomEvent.DoubleTap.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/DomEvent.Pointer.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/map/handler/Map.TouchZoom.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/map/handler/Map.Tap.js";
-
-		// BoxZoom Enables zooming to bounding box by shift-dragging the map.
-			// "map/leaflet/leaflet-src/map/handler/Map.BoxZoom.js";
-
-		// Keyboard Enables keyboard pan/zoom when the map is focused.
-			// "map/leaflet/leaflet-src/map/handler/Map.Keyboard.js";
-
-		// ControlZoom Basic zoom control with two buttons (zoom in / zoom out).
-			// @codekit-prepend "map/leaflet/leaflet-src/control/Control.Zoom.js";
-
-		// ControlAttrib Attribution control.
-			// @codekit-prepend "map/leaflet/leaflet-src/control/Control.Attribution.js";
-
-		// ControlScale Scale control.
-			// "map/leaflet/leaflet-src/control/Control.Scale.js";
-
-		// ControlLayers Layer Switcher control.
-			// "map/leaflet/leaflet-src/control/Control.Layers.js";
-
-		// AnimationPan Core panning animation support.
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/PosAnimation.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/map/anim/Map.PanAnimation.js";
-
-		// AnimationTimer Timer-based pan animation fallback for browsers that don\'t support CSS3 transitions.
-			// @codekit-prepend "map/leaflet/leaflet-src/dom/PosAnimation.Timer.js";
-
-		// AnimationZoom Smooth zooming animation. Works only on browsers that support CSS3 Transitions.
-			// @codekit-prepend "map/leaflet/leaflet-src/map/anim/Map.ZoomAnimation.js";
-			// @codekit-prepend "map/leaflet/leaflet-src/layer/tile/TileLayer.Anim.js";
-
-		// Geolocation Adds Map#locate method and related events to make geolocation easier.'
-			// "map/leaflet/leaflet-src/map/ext/Map.Geolocation.js";
-	
-// LEAFLET EXTENTIONS
-	// @codekit-prepend "map/leaflet/extentions/VCO.Leaflet.TileLayer.Zoomify.js";
-	// @codekit-prepend "map/leaflet/extentions/VCO.Leaflet.MiniMap.js";
-	
-// TILES
-	// "map/tile/VCO.TileLayer.Mapbox.js"; NOT READY YET
-	// @codekit-prepend "map/tile/VCO.TileLayer.Stamen.js";
-	
-// MAP
-	// @codekit-prepend "map/VCO.MapMarker.js";
-	// @codekit-prepend "map/VCO.Map.js";
-
-// LEAFLET IMPLIMENTATION
-	// @codekit-prepend "map/leaflet/VCO.MapMarker.Leaflet.js";
-	// @codekit-prepend "map/leaflet/VCO.Map.Leaflet.js";
-
-
-VCO.StoryMap = VCO.Class.extend({
+VCO.VideoSlider = VCO.Class.extend({
 	
 	includes: VCO.Events,
 	
@@ -408,13 +248,7 @@ VCO.StoryMap = VCO.Class.extend({
 
 	/*	Navigation
 	================================================== */
-	goTo: function(n) {
-		if (n != this.current_slide) {
-			this.current_slide = n;
-			this._storyslider.goTo(this.current_slide);
-			this._map.goTo(this.current_slide);
-		}
-	},
+
 
 	updateDisplay: function() {
 		if (this.ready) {
@@ -453,12 +287,10 @@ VCO.StoryMap = VCO.Class.extend({
 	_initLayout: function () {
 		var self = this;
 		
-		this._el.container.className += ' vco-storymap';
+		this._el.container.className += ' vco-videoslider';
 		this.options.base_class = this._el.container.className;
 		
 		// Create Layout
-		this._el.menubar		= VCO.Dom.create('div', 'vco-menubar', this._el.container);
-		this._el.map 			= VCO.Dom.create('div', 'vco-map', this._el.container);
 		this._el.storyslider 	= VCO.Dom.create('div', 'vco-storyslider', this._el.container);
 		
 		// Initial Default Layout
@@ -467,41 +299,15 @@ VCO.StoryMap = VCO.Class.extend({
 		this._el.map.style.height 		= "1px";
 		this._el.storyslider.style.top 	= "1px";
 		
-		// Create Map using preferred Map API
-		this._map = new VCO.Map.Leaflet(this._el.map, this.data, this.options);
-		this._map.on('loaded', this._onMapLoaded, this);
-		
 		// Map Background Color
 		this._el.map.style.backgroundColor = this.options.map_background_color;
-		
-		// Create Menu Bar
-		this._menubar = new VCO.MenuBar(this._el.menubar, this._el.container, this.options);
 		
 		// Create StorySlider
 		this._storyslider = new VCO.StorySlider(this._el.storyslider, this.data, this.options);
 		this._storyslider.on('loaded', this._onStorySliderLoaded, this);
 		this._storyslider.init();
 		
-		// LAYOUT
-		if (this.options.layout == "portrait") {
-			// Set Default Component Sizes
-			this.options.map_height 		= (this.options.height / this.options.map_size_sticky);
-			this.options.storyslider_height = (this.options.height - this._el.menubar.offsetHeight - this.options.map_height - 1);
-			this._menubar.setSticky(0);
-		} else {
-			this.options.menubar_height = this._el.menubar.offsetHeight;
-			// Set Default Component Sizes
-			this.options.map_height 		= this.options.height;
-			this.options.storyslider_height = (this.options.height - this._el.menubar.offsetHeight - 1);
-			this._menubar.setSticky(this.options.menubar_height);
-		}
 		
-		
-		// Update Display
-		this._updateDisplay(this.options.map_height, true, 2000);
-		
-		// Animate Menu Bar to Default Location
-		this._menubar.show(2000);
 		
 	},
 	
